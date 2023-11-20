@@ -104,6 +104,8 @@ body nav .nav-text {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 body .all-services__all-cards {
   margin-top: 23px;
@@ -233,6 +235,8 @@ body footer .text-div {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 body footer .text-div h3 {
   color: white !important;
@@ -335,7 +339,7 @@ body .hide-modal {
           align-items: center;
 }
 #modal .modal {
-  width: 30%;
+  width: 40%;
   height: 95%;
   max-width: 560px;
   max-height: 750px;
@@ -388,4 +392,75 @@ body .hide-modal {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #001E64;
+}
+
+@media (max-width: 1200px) {
+  * section {
+    max-width: 856px;
+  }
+  #modal .modal {
+    width: 50%;
+  }
+  #modal .modal__img {
+    min-height: 175px;
+  }
+}
+@media (max-width: 900px) {
+  * section {
+    max-width: 559px;
+  }
+  #modal .modal {
+    width: 85%;
+  }
+}
+@media (max-width: 575px) {
+  * section {
+    max-width: 260px;
+  }
+  body nav .nav-text {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body nav .nav-text img {
+    display: none;
+  }
+  body .all-services h1 {
+    text-align: center;
+  }
+  body #card-19 {
+    display: none;
+  }
+  body footer {
+    min-height: 250px;
+  }
+  body footer .text-div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0;
+  }
+  body footer .text-div h3 {
+    margin-top: 50px;
+  }
+  #modal .modal {
+    width: 100%;
+  }
+  #modal .modal__img {
+    min-height: 150px;
+  }
+  #modal .modal p {
+    font-size: 14px !important;
+    line-height: 18px;
+  }
+  #modal .modal h3 {
+    font-size: 18px !important;
+  }
 }

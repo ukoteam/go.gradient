@@ -104,6 +104,8 @@ body {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding-left: 50px;
+            padding-right: 50px;
         }
     }
 
@@ -218,6 +220,8 @@ body {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            padding-left: 50px;
+            padding-right: 50px;
 
             h3 {
                 color: white !important;
@@ -321,7 +325,7 @@ body {
     
 
     .modal {
-        width: 30%;
+        width: 40%;
         height: 95%;
         max-width: 560px;
         max-height: 750px;
@@ -384,4 +388,100 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
     background-color: $dark-blue;
+}
+
+// Адаптив
+@media (max-width: 1200px) {
+    * {
+        section {
+            max-width: 856px;
+        }
+    }
+
+    #modal {
+        .modal {
+            width: 50%;
+
+            &__img {
+                min-height: 175px;
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    * {
+        section {
+            max-width: 559px;
+        }
+    }
+
+    #modal {
+        .modal {
+            width: 85%;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    * {
+        section {
+            max-width: 260px;
+        }
+    }
+
+    body {
+        nav {
+            .nav-text {
+                justify-content: center;
+                img {
+                    display: none;
+                }
+            }
+        }
+
+        .all-services {
+            h1 {
+                text-align: center;
+            }
+        }
+
+        #card-19 {
+            display: none;
+        }
+
+        footer {
+            min-height: 250px;
+
+            .text-div {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                
+                h3 {
+                    margin-top: 50px;
+                }
+            }
+        }
+    }
+
+    #modal {
+        .modal {
+            width: 100%;
+
+            &__img {
+                min-height: 150px;
+            }
+
+            p {
+                font-size: 14px !important;
+                line-height: 18px;
+            }
+
+            h3 {
+                font-size: 18px !important;
+            }
+        }
+    }
 }
