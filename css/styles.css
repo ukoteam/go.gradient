@@ -333,7 +333,7 @@ body .hide-modal {
           align-items: center;
 }
 #modal .modal {
-  width: 40%;
+  width: 30%;
   height: 95%;
   max-width: 560px;
   max-height: 750px;
@@ -341,7 +341,7 @@ body .hide-modal {
 }
 #modal .modal__img {
   width: 100%;
-  min-height: 242px;
+  min-height: 200px;
   background: url("../src/modal-win.png") center/cover no-repeat;
   padding: 28px;
 }
@@ -352,16 +352,17 @@ body .hide-modal {
   float: right;
   cursor: pointer;
 }
-#modal .modal h2 {
+#modal .modal h3 {
   text-align: center;
   margin-top: 12px;
+  font-weight: 400 !important;
 }
 #modal .modal p {
   padding-left: 40px;
   padding-right: 40px;
-  font-size: 20px !important;
+  font-size: 18px !important;
   margin-top: 12px;
-  line-height: 24px;
+  line-height: 22px;
 }
 #modal .modal a {
   font-weight: 400;

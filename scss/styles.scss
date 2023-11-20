@@ -319,17 +319,15 @@ body {
     
 
     .modal {
-        width: 40%;
+        width: 30%;
         height: 95%;
         max-width: 560px;
         max-height: 750px;
         background-color: white;
 
-        
-
         &__img {
             width: 100%;
-            min-height: 242px;
+            min-height: 200px;
             background: url('../src/modal-win.png') center/cover no-repeat;
             padding: 28px;
 
@@ -342,17 +340,18 @@ body {
             }
         }
 
-        h2 {
+        h3 {
             text-align: center;
             margin-top: 12px;
+            font-weight: 400 !important;
         }
 
         p {
             padding-left: 40px;
             padding-right: 40px;
-            font-size: 20px !important;
+            font-size: 18px !important;
             margin-top: 12px;
-            line-height: 24px;
+            line-height: 22px;
         }
 
         a {
