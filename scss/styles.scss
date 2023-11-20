@@ -6,6 +6,12 @@
 
 @font-face {
     font-family: 'HelventicaNeueCyr';
+    src: url("../src/fonts/HelveticaNeueCyr-Light.ttf");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'HelventicaNeueCyr';
     src: url("../src/fonts/HelveticaNeueCyr-Roman.ttf");
     font-weight: 300;
 }
@@ -25,6 +31,7 @@ $dark-blue: #001E64;
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     
     h1 {
         font-family: 'HelventicaNeueCyr';
@@ -45,16 +52,168 @@ $dark-blue: #001E64;
         font-weight: 300;
         font-size: 22px;
         color: $dark-blue;
+        line-height: 26px;
     }
 
     button {
         font-size: 18px;
         padding-top: 7px;
         padding-bottom: 7px;
+        cursor: pointer;
+    }
+
+    section {
+        width: 100%;
+        max-width: 1152px;
+        margin-top: 69px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    p {
+        color: $dark-blue;
+        font-size: 16px;
+        line-height: 20px;
+        font-family: 'HelventicaNeueCyr';
+        font-weight: 200;
+        margin-top: 5px;
     }
 }
 
 // Основные стили
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    nav {
+        background-color: $green;
+        width: 100%;
+        min-height: 61px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+
+        .nav-text {
+            width: 100%;
+            max-width: 1152px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    .all-services {
+
+        &__all-cards {
+            margin-top: 23px;
+
+            .card {
+                width: 100%;
+                max-width: 262px;
+                min-height: 395px;
+                padding-left: 22px;
+                padding-right: 22px;
+                padding-top: 16px;
+                padding-bottom: 19px;
+                border: 1px solid $dark-blue;
+                border-radius: 12px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .card-in {
+                    &__logo {
+                        padding: 4px;
+                        margin-bottom: 15px;
+                        min-height: 205px;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: end;
     
+                        .flag-false {
+                            background: url("../src/flag-false.svg") center/cover no-repeat;
+                            width: 28px;
+                            height: 34px;
+                            cursor: pointer;
+    
+                            display: none;
+                        }
+    
+                        .flag-true {
+                            background: url("../src/flag-true.svg") center/cover no-repeat;
+                            width: 28px;
+                            height: 34px;
+                            cursor: pointer;
+    
+                            // display: none;
+                        }
+                    }
+                }
+
+                .hidden {
+                    display: none;
+                }
+
+                &__buttons {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    
+                    .link-button {
+                        padding-left: 52px;
+                        padding-right: 52px;
+                        background-color: $dark-blue;
+                        color: white;
+                        font-family: "HelventicaNeueCyr";
+                        font-weight: 200;
+                        border-radius: 12px;
+                        border: none;
+                    }
+
+                    .info-button {
+                        border: 1px solid $dark-blue;
+                        border-radius: 12px;
+                        padding-right: 12px;
+                        padding-bottom: 6px !important;
+                        padding-left: 12px;
+                        font-family: 'Inter';
+                        color: $dark-blue;
+                        background-color: white;
+
+                    }
+
+                    .info-button:hover {
+                        color: white;
+                        background-color: $dark-blue;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+// Логотипы в карточках
+#official-gradient {
+    background: url('../src/official-gradient.png') center/cover no-repeat;
+}
+
+// Ползунок прокрутки
+::-webkit-scrollbar {
+    width: 12px;
+    height: 4px;
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $green;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: $dark-blue;
 }
