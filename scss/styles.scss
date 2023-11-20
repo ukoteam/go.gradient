@@ -1,0 +1,60 @@
+// Шрифты
+@font-face {
+    font-family: 'Inter';
+    src: url("../src/fonts/Inter-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'HelventicaNeueCyr';
+    src: url("../src/fonts/HelveticaNeueCyr-Roman.ttf");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'HelventicaNeueCyr';
+    src: url("../src/fonts/HelveticaNeueCyr-Medium.ttf");
+    font-weight: 400;
+}
+
+// Цвета сайта
+$green: #BEE154;
+$blue: #489FDF;
+$dark-blue: #001E64;
+
+// Общие настройки по Ui kit
+* {
+    margin: 0;
+    padding: 0;
+    
+    h1 {
+        font-family: 'HelventicaNeueCyr';
+        font-weight: 400;
+        font-size: 32px;
+        color: $dark-blue;
+    }
+    
+    h2 {
+        font-family: 'HelventicaNeueCyr';
+        font-weight: 400;
+        font-size: 28px;
+        color: $dark-blue;
+    }
+
+    h3 {
+        font-family: 'HelventicaNeueCyr';
+        font-weight: 300;
+        font-size: 22px;
+        color: $dark-blue;
+    }
+
+    button {
+        font-size: 18px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+}
+
+// Основные стили
+body {
+    
+}

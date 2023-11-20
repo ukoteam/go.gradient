@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../src/fonts/Inter-Regular.ttf");
+}
+@font-face {
+  font-family: "HelventicaNeueCyr";
+  src: url("../src/fonts/HelveticaNeueCyr-Roman.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "HelventicaNeueCyr";
+  src: url("../src/fonts/HelveticaNeueCyr-Medium.ttf");
+  font-weight: 400;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+* h1 {
+  font-family: "HelventicaNeueCyr";
+  font-weight: 400;
+  font-size: 32px;
+  color: #001E64;
+}
+* h2 {
+  font-family: "HelventicaNeueCyr";
+  font-weight: 400;
+  font-size: 28px;
+  color: #001E64;
+}
+* h3 {
+  font-family: "HelventicaNeueCyr";
+  font-weight: 300;
+  font-size: 22px;
+  color: #001E64;
+}
+* button {
+  font-size: 18px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
