@@ -130,6 +130,10 @@ body {
                 justify-content: space-between;
                 margin-bottom: 35px;
 
+                .hidden {
+                    display: none;
+                }
+
                 .card-in {
                     &__logo {
                         padding: 4px;
@@ -157,10 +161,6 @@ body {
                             // display: none;
                         }
                     }
-                }
-
-                .hidden {
-                    display: none;
                 }
 
                 &__buttons {
@@ -199,6 +199,32 @@ body {
                 }
             }
         }
+    }
+
+    footer {
+        margin-top: 80px;
+        width: 100%;
+        min-height: 335px;
+        background-color: $dark-blue;
+        display: flex;
+        justify-content: center;
+
+        .text-div {
+            margin-top: 68px;
+            width: 100%;
+            max-width: 955px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            h3 {
+                color: white !important;
+            }
+        }
+    }
+
+    .hide-modal {
+        display: none !important;
     }
 }
 
@@ -279,8 +305,70 @@ body {
     background: url('../src/famgrad.png') center/cover no-repeat;
 }
 
+// Модальное окно сотрудника 1C
+#modal {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.70);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 
+    .modal {
+        width: 40%;
+        height: 95%;
+        max-width: 560px;
+        max-height: 750px;
+        background-color: white;
 
+        
+
+        &__img {
+            width: 100%;
+            min-height: 242px;
+            background: url('../src/modal-win.png') center/cover no-repeat;
+            padding: 28px;
+
+            .close-button {
+                width: 22px;
+                height: 22px;
+                background: url('../src/close-button.svg') center/cover no-repeat;
+                float: right;
+                cursor: pointer;
+            }
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        p {
+            padding-left: 40px;
+            padding-right: 40px;
+            font-size: 20px !important;
+            margin-top: 12px;
+            line-height: 24px;
+        }
+
+        a {
+            font-weight: 400;
+            text-decoration: underline;
+            color: $blue;
+            
+        }
+
+        a:visited {
+            text-decoration: underline;
+            color: $dark-blue;
+        }
+    }
+    
+}
 
 // Ползунок прокрутки
 ::-webkit-scrollbar {

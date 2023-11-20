@@ -15,3 +15,10 @@ function FunkOut(e) {
     cardIn.classList.remove('hidden')
     cardInfo.classList.add('hidden')
 }
+
+
+// Модальное окно
+let modal = document.getElementById('modal')
+function modalWindow() {
+    modal.classList.toggle('hide-modal')
+}

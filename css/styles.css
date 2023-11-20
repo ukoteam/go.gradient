@@ -141,6 +141,9 @@ body .all-services__all-cards .card {
           justify-content: space-between;
   margin-bottom: 35px;
 }
+body .all-services__all-cards .card .hidden {
+  display: none;
+}
 body .all-services__all-cards .card .card-in__logo {
   padding: 4px;
   margin-bottom: 15px;
@@ -165,9 +168,6 @@ body .all-services__all-cards .card .card-in__logo .flag-true {
   width: 28px;
   height: 34px;
   cursor: pointer;
-}
-body .all-services__all-cards .card .hidden {
-  display: none;
 }
 body .all-services__all-cards .card__buttons {
   display: -webkit-box;
@@ -204,6 +204,39 @@ body .all-services__all-cards .card__buttons .info-button {
 body .all-services__all-cards .card__buttons .info-button:hover {
   color: white;
   background-color: #001E64;
+}
+body footer {
+  margin-top: 80px;
+  width: 100%;
+  min-height: 335px;
+  background-color: #001E64;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+body footer .text-div {
+  margin-top: 68px;
+  width: 100%;
+  max-width: 955px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+body footer .text-div h3 {
+  color: white !important;
+}
+body .hide-modal {
+  display: none !important;
 }
 
 #official-gradient {
@@ -280,6 +313,64 @@ body .all-services__all-cards .card__buttons .info-button:hover {
 
 #famgrad {
   background: url("../src/famgrad.png") center/cover no-repeat;
+}
+
+#modal {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#modal .modal {
+  width: 40%;
+  height: 95%;
+  max-width: 560px;
+  max-height: 750px;
+  background-color: white;
+}
+#modal .modal__img {
+  width: 100%;
+  min-height: 242px;
+  background: url("../src/modal-win.png") center/cover no-repeat;
+  padding: 28px;
+}
+#modal .modal__img .close-button {
+  width: 22px;
+  height: 22px;
+  background: url("../src/close-button.svg") center/cover no-repeat;
+  float: right;
+  cursor: pointer;
+}
+#modal .modal h2 {
+  text-align: center;
+  margin-top: 12px;
+}
+#modal .modal p {
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 20px !important;
+  margin-top: 12px;
+  line-height: 24px;
+}
+#modal .modal a {
+  font-weight: 400;
+  text-decoration: underline;
+  color: #489FDF;
+}
+#modal .modal a:visited {
+  text-decoration: underline;
+  color: #001E64;
 }
 
 ::-webkit-scrollbar {
