@@ -110,6 +110,10 @@ body {
 
         &__all-cards {
             margin-top: 23px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
 
             .card {
                 width: 100%;
@@ -124,6 +128,7 @@ body {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+                margin-bottom: 35px;
 
                 .card-in {
                     &__logo {
@@ -131,7 +136,6 @@ body {
                         margin-bottom: 15px;
                         min-height: 205px;
                         width: 100%;
-                        height: 100%;
                         display: flex;
                         justify-content: end;
     
@@ -202,6 +206,81 @@ body {
 #official-gradient {
     background: url('../src/official-gradient.png') center/cover no-repeat;
 }
+
+#gradient-life {
+    background: url('../src/gradient-life.png') center/cover no-repeat;
+}
+
+#tg-gradient {
+    background: url('../src/tg-gradient.png') center/cover no-repeat;
+}
+
+#tg-bot-gradient {
+    background: url('../src/tg-bot-gradient.png') center/cover no-repeat;
+}
+
+#elma {
+    background: url('../src/elma.png') center/cover no-repeat;
+}
+
+#servicedesk {
+    background: url('../src/servicedesk.png') center/cover no-repeat;
+}
+
+#indaspace {
+    background: url('../src/indaspace.png') center/cover no-repeat;
+}
+
+#c-logo {
+    background: url('../src/c-logo.png') center/cover no-repeat;
+}
+
+#mis {
+    background: url('../src/mis.png') center/cover no-repeat;
+}
+
+#el-archive {
+    background: url('../src/el-archive.png') center/cover no-repeat;
+}
+
+#cloud-gradient {
+    background: url('../src/cloud-gradient.png') center/cover no-repeat;
+}
+
+#portal-dist {
+    background: url('../src/portal-dist.png') center/cover no-repeat;
+}
+
+#experium {
+    background: url('../src/experium.png') center/cover no-repeat;
+}
+
+#gradmart {
+    background: url('../src/gradmart.png') center/cover no-repeat;
+}
+
+#pro-portal {
+    background: url('../src/pro-portal.png') center/cover no-repeat;
+}
+
+#pro-decor {
+    background: url('../src/pro-decor.png') center/cover no-repeat;
+}
+
+#pro-platform {
+    background: url('../src/pro-platform.png') center/cover no-repeat;
+}
+
+#pro-pim {
+    background: url('../src/pro-pim.png') center/cover no-repeat;
+}
+
+#famgrad {
+    background: url('../src/famgrad.png') center/cover no-repeat;
+}
+
+
+
 
 // Ползунок прокрутки
 ::-webkit-scrollbar {
