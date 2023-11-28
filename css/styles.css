@@ -77,7 +77,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  background: url("../src/body-snow-back.png") no-repeat;
+  background: url("../src/body-snow.png") no-repeat;
 }
 body nav {
   background-color: #BEE154;
@@ -125,7 +125,7 @@ body .all-services__all-cards {
 body .all-services__all-cards .card {
   width: 100%;
   max-width: 262px;
-  min-height: 395px;
+  min-height: 360px;
   padding-left: 22px;
   padding-right: 22px;
   padding-top: 16px;
@@ -150,7 +150,6 @@ body .all-services__all-cards .card .hidden {
 }
 body .all-services__all-cards .card .card-in__logo {
   padding: 4px;
-  margin-bottom: 15px;
   min-height: 205px;
   width: 100%;
   display: -webkit-box;
@@ -172,6 +171,27 @@ body .all-services__all-cards .card .card-in__logo .flag-true {
   width: 28px;
   height: 34px;
   cursor: pointer;
+}
+body .all-services__all-cards .card .card-in h3 {
+  text-align: center;
+  font-weight: 300 !important;
+}
+body .all-services__all-cards .card__info {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 16px;
+}
+body .all-services__all-cards .card__info p {
+  margin-top: 7px;
 }
 body .all-services__all-cards .card__buttons {
   display: -webkit-box;
@@ -210,9 +230,9 @@ body .all-services__all-cards .card__buttons .info-button:hover {
   background-color: #001E64;
 }
 body footer {
-  margin-top: 80px;
+  margin-top: 25px;
   width: 100%;
-  min-height: 335px;
+  min-height: 75px;
   background-color: #001E64;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -220,11 +240,12 @@ body footer {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 body footer .text-div {
-  margin-top: 68px;
   width: 100%;
-  max-width: 955px;
+  max-width: 1153px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -235,11 +256,20 @@ body footer .text-div {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-left: 50px;
-  padding-right: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 body footer .text-div h3 {
   color: white !important;
+}
+body footer .text-div button {
+  padding-left: 12px;
+  padding-right: 12px;
+  background: none;
+  border: 1px solid white;
+  border-radius: 12px;
+  color: white;
 }
 body .hide-modal {
   display: none !important;
@@ -413,9 +443,28 @@ body .hide-modal {
     width: 85%;
   }
 }
+@media (max-width: 850px) {
+  body nav .nav-text .h2-ser {
+    display: none;
+  }
+  body nav .nav-text .h2-go {
+    display: block !important;
+  }
+}
 @media (max-width: 575px) {
   * section {
     max-width: 260px;
+  }
+  * h3 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  * p {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  * button {
+    font-size: 16px;
   }
   body nav .nav-text {
     -webkit-box-pack: center;
@@ -428,11 +477,43 @@ body .hide-modal {
   body .all-services h1 {
     text-align: center;
   }
+  body .all-services__all-cards {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body .all-services__all-cards .card {
+    max-width: 200px;
+    min-height: 275px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 10px;
+    padding-bottom: 12px;
+    border-radius: 7px;
+    margin-bottom: 20px;
+  }
+  body .all-services__all-cards .card .card-in__logo {
+    min-height: 156px;
+  }
+  body .all-services__all-cards .card__info {
+    padding-bottom: 10px;
+  }
+  body .all-services__all-cards .card__info p {
+    margin-top: 4px;
+  }
+  body .all-services__all-cards .card__buttons {
+    margin-top: 5px;
+  }
+  body .all-services__all-cards .card__buttons .link-button {
+    padding-left: 36px;
+    padding-right: 36px;
+    font-weight: 200;
+  }
+  body .all-services__all-cards .card__buttons .info-button {
+    padding-bottom: 4px !important;
+  }
   body #card-19 {
     display: none;
-  }
-  body footer {
-    min-height: 250px;
   }
   body footer .text-div {
     -webkit-box-orient: vertical;
