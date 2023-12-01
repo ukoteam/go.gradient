@@ -22,6 +22,12 @@
     font-weight: 400;
 }
 
+@font-face {
+    font-family: 'HelventicaNeueCyr';
+    src: url("../src/fonts/HelveticaNeueCyr-Bold.ttf");
+    font-weight: 500;
+}
+
 // Цвета сайта
 $green: #BEE154;
 $blue: #489FDF;
@@ -80,6 +86,15 @@ $dark-blue: #001E64;
         font-weight: 200;
         margin-top: 5px;
     }
+
+    span {
+        font-weight: 500  !important;
+    }
+
+}
+
+*::selection {
+    background: rgba(75, 162, 221, 0.50);
 }
 
 // Основные стили
@@ -196,6 +211,7 @@ body {
                     .link-button {
                         padding-left: 52px;
                         padding-right: 52px;
+                        padding-top: 8px !important;
                         background-color: $dark-blue;
                         color: white;
                         font-family: "HelventicaNeueCyr";
@@ -317,7 +333,7 @@ body {
 }
 
 #gradmart {
-    background: url('../src/gradmart.png') center/cover no-repeat;
+    background: url('../src/gradmart.jpg') center/cover no-repeat;
 }
 
 #pro-portal {
