@@ -115,7 +115,7 @@ body {
 
         .nav-text {
             width: 100%;
-            max-width: 1152px;
+            max-width: 1253px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -151,8 +151,9 @@ body {
                 flex-direction: column;
                 justify-content: space-between;
                 margin-bottom: 35px;
-                background-color: white;
-
+                background: rgba(255, 255, 255);
+                transition: all 0.4s;
+                
                 .hidden {
                     display: none;
                 }

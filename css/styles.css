@@ -110,7 +110,7 @@ body nav {
 }
 body nav .nav-text {
   width: 100%;
-  max-width: 1152px;
+  max-width: 1253px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -162,7 +162,9 @@ body .all-services__all-cards .card {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-bottom: 35px;
-  background-color: white;
+  background: rgb(255, 255, 255);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
 }
 body .all-services__all-cards .card .hidden {
   display: none;
