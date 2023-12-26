@@ -138,6 +138,9 @@ body .all-services__all-cards {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
+body .all-services__all-cards .none {
+  display: none !important;
+}
 body .all-services__all-cards .card {
   width: 100%;
   max-width: 262px;
@@ -262,7 +265,7 @@ body footer {
 }
 body footer .text-div {
   width: 100%;
-  max-width: 1153px;
+  max-width: 1193px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -276,6 +279,8 @@ body footer .text-div {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 body footer .text-div h3 {
   color: white !important;
@@ -366,6 +371,18 @@ body .hide-modal {
 
 #famgrad {
   background: url("../src/famgrad.png") center/cover no-repeat;
+}
+
+#livedigital {
+  background: url("../src/livedigital.jpg") center/cover no-repeat;
+}
+
+#blank {
+  opacity: 0;
+}
+
+#blank2 {
+  opacity: 0;
 }
 
 #modal {
@@ -531,22 +548,6 @@ body .hide-modal {
   }
   body #card-19 {
     display: none;
-  }
-  body footer .text-div {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin: 0;
-  }
-  body footer .text-div h3 {
-    margin-top: 50px;
   }
   #modal .modal {
     width: 100%;

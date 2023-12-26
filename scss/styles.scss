@@ -133,6 +133,10 @@ body {
             justify-content: space-between;
             flex-wrap: wrap;
 
+            .none {
+                display: none !important;
+            }
+
             .card {
                 width: 100%;
                 max-width: 262px;
@@ -253,11 +257,13 @@ body {
 
         .text-div {
             width: 100%;
-            max-width: 1153px;
+            max-width: 1193px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+            padding-left: 20px;
+            padding-right: 20px;
 
             h3 {
                 color: white !important;
@@ -354,6 +360,18 @@ body {
 
 #famgrad {
     background: url('../src/famgrad.png') center/cover no-repeat;
+}
+
+#livedigital {
+    background: url('../src/livedigital.jpg') center/cover no-repeat;
+}
+
+#blank {
+    opacity: 0;
+}
+
+#blank2 {
+    opacity: 0;
 }
 
 // Модальное окно сотрудника 1C
@@ -565,18 +583,18 @@ body {
             display: none;
         }
 
-        footer {
-            .text-div {
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                margin: 0;
+        // footer {
+        //     .text-div {
+        //         flex-direction: column;
+        //         justify-content: center;
+        //         align-items: center;
+        //         margin: 0;
                 
-                h3 {
-                    margin-top: 50px;
-                }
-            }
-        }
+        //         h3 {
+        //             margin-top: 50px;
+        //         }
+        //     }
+        // }
     }
 
     #modal {

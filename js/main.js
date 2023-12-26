@@ -22,3 +22,51 @@ let modal = document.getElementById('modal')
 function modalWindow() {
     modal.classList.toggle('hide-modal')
 }
+
+
+// Нормализация порядка карточек
+let blank1 = document.getElementById("blank"),
+    blank2 = document.getElementById("blank2"),
+    cardElements = document.querySelectorAll(".all-services__all-cards .card");
+
+switch ((cardElements.length - 2) % 4) {
+    case 3: blank1.classList.remove("none");
+    case 2: {blank1.classList.remove("none");
+            blank2.classList.remove("none")};
+}
+
+function noneCheckFunc() {
+    for (i = 0; i < cardElements.length; i++) {
+        if (!blank1.classList.contains("none")) {
+            blank1.classList.add("none");
+        } else if (!blank2.classList.contains("none")) {
+            blank2.classList.add("none");
+        }
+    }
+}
+
+
+window.addEventListener("resize", function(event) {
+    /// Ширина экрана
+    const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+
+    if (viewportWidth <= 1200 & viewportWidth > 900) {
+        noneCheckFunc()
+
+        switch ((cardElements.length - 2) % 3) {
+            case 2: blank1.classList.remove("none");
+        }
+    } else if (viewportWidth <= 900) {
+        noneCheckFunc()
+    } else if (viewportWidth > 1200) {
+        noneCheckFunc()
+
+        switch ((cardElements.length - 2) % 4) {
+            case 3: blank1.classList.remove("none");
+            case 2: {blank1.classList.remove("none");
+                    blank2.classList.remove("none")};
+        }
+    }
+});
+
+// console.log(cardElements)
