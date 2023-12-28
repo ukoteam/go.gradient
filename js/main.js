@@ -7,7 +7,7 @@ function FunkOn(e) {
     cardIn.classList.add('hidden')
     cardInfo.classList.remove('hidden')
 
-    el.style.background = `url(${"../src/cards-bg/" + e + ".png"}) center/cover no-repeat`;
+    el.style.background = `url(${"../src/" + e + ".png"}) center/cover no-repeat`;
 }
 
 function FunkOut(e) {
