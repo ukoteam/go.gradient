@@ -180,18 +180,16 @@ body .all-services__all-cards .card .card-in__logo {
       -ms-flex-pack: end;
           justify-content: end;
 }
-body .all-services__all-cards .card .card-in__logo .flag-false {
-  background: url("../src/flag-false.svg") center/cover no-repeat;
+body .all-services__all-cards .card .card-in__logo .flag {
   width: 28px;
   height: 34px;
   cursor: pointer;
-  display: none;
 }
-body .all-services__all-cards .card .card-in__logo .flag-true {
+body .all-services__all-cards .card .card-in__logo .false {
+  background: url("../src/flag-false.svg") center/cover no-repeat;
+}
+body .all-services__all-cards .card .card-in__logo .true {
   background: url("../src/flag-true.svg") center/cover no-repeat;
-  width: 28px;
-  height: 34px;
-  cursor: pointer;
 }
 body .all-services__all-cards .card .card-in h3 {
   text-align: center;

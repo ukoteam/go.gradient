@@ -168,22 +168,18 @@ body {
                         display: flex;
                         justify-content: end;
     
-                        .flag-false {
-                            background: url("../src/flag-false.svg") center/cover no-repeat;
+                        .flag {
                             width: 28px;
                             height: 34px;
                             cursor: pointer;
-    
-                            display: none;
+                        }
+
+                        .false {
+                            background: url("../src/flag-false.svg") center/cover no-repeat;
                         }
     
-                        .flag-true {
+                        .true {
                             background: url("../src/flag-true.svg") center/cover no-repeat;
-                            width: 28px;
-                            height: 34px;
-                            cursor: pointer;
-    
-                            // display: none;
                         }
                     }
 
