@@ -123,6 +123,9 @@ body nav .nav-text {
   padding-left: 50px;
   padding-right: 50px;
 }
+body .hide {
+  display: none !important;
+}
 body .all-services__all-cards {
   margin-top: 23px;
   display: -webkit-box;

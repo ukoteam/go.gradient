@@ -32,7 +32,7 @@ function modalWindow() {
 // Нормализация порядка карточек
 let blank1 = document.getElementById("blank"),
     blank2 = document.getElementById("blank2"),
-    cardElements = document.querySelectorAll(".all-services__all-cards .card");
+    cardElements = document.getElementById("allCards").querySelectorAll(".card");
 
 switch ((cardElements.length - 2) % 4) {
     case 3: blank1.classList.remove("none");
