@@ -7,6 +7,9 @@ function FunkOn(e) {
     cardIn.classList.add('hidden')
     cardInfo.classList.remove('hidden')
 
+    if (e.slice(0, 3) == "fav") {
+        e = e.slice(3)
+    }
     el.style.background = `url(${"../src/" + e + ".png"}) center/cover no-repeat`;
 }
 
@@ -28,11 +31,12 @@ function modalWindow() {
     modal.classList.toggle('hide-modal')
 }
 
-
-// Нормализация порядка карточек
 let blank1 = document.getElementById("blank"),
     blank2 = document.getElementById("blank2"),
     cardElements = document.getElementById("allCards").querySelectorAll(".card");
+
+// Нормализация порядка карточек
+function noneCheckFunc() {
 
 switch ((cardElements.length - 2) % 4) {
     case 3: blank1.classList.remove("none");
@@ -40,8 +44,7 @@ switch ((cardElements.length - 2) % 4) {
             blank2.classList.remove("none")};
 }
 
-function noneCheckFunc() {
-    for (i = 0; i < cardElements.length; i++) {
+    for (i = 0; i < 2; i++) {
         if (!blank1.classList.contains("none")) {
             blank1.classList.add("none");
         } else if (!blank2.classList.contains("none")) {
@@ -73,5 +76,3 @@ window.addEventListener("resize", function(event) {
         }
     }
 });
-
-// console.log(cardElements)

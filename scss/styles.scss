@@ -141,6 +141,10 @@ body {
                 display: none !important;
             }
 
+            .noneBlank {
+                display: none !important;
+            }
+
             .card {
                 width: 100%;
                 max-width: 262px;
@@ -372,6 +376,14 @@ body {
 }
 
 #blank2 {
+    opacity: 0;
+}
+
+#favblank {
+    opacity: 0;
+}
+
+#favblank2 {
     opacity: 0;
 }
 

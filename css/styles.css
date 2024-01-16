@@ -144,6 +144,9 @@ body .all-services__all-cards {
 body .all-services__all-cards .none {
   display: none !important;
 }
+body .all-services__all-cards .noneBlank {
+  display: none !important;
+}
 body .all-services__all-cards .card {
   width: 100%;
   max-width: 262px;
@@ -385,6 +388,14 @@ body .hide-modal {
 }
 
 #blank2 {
+  opacity: 0;
+}
+
+#favblank {
+  opacity: 0;
+}
+
+#favblank2 {
   opacity: 0;
 }
 
