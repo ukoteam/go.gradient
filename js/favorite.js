@@ -1,53 +1,3 @@
-let favblank1 = document.getElementById("favblank"),
-    favblank2 = document.getElementById("favblank2");
-
-// Нормализация порядка карточек
-function noneCheckFunc() {
-    for (i = 0; i < 2; i++) {
-        if (!favblank1.classList.contains("noneBlank")) {
-            favblank1.classList.add("noneBlank");
-        } else if (!favblank2.classList.contains("noneBlank")) {
-            favblank2.classList.add("noneBlank");
-        }
-    }
-}
-
-function reloadFavBlank() {
-    let cardElements = document.getElementById("favoriteAll").querySelectorAll(".card");
-    var count = 0
-    for (var i = 0; i < cardElements.length; i++) {
-        if (!cardElements[i].classList.contains('none') & !cardElements[i].classList.contains('noneBlank')) {
-            count++
-            console.log(cardElements[i])
-        }
-    }
-
-    /// Ширина экрана
-    const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-
-    if (viewportWidth <= 1200 & viewportWidth > 900) {
-        noneCheckFunc()
-        switch (count % 3) {
-            case 2: favblank1.classList.remove("noneBlank");
-        }
-
-    } else if (viewportWidth <= 900) {
-        noneCheckFunc()
-
-    } else if (viewportWidth > 1200) {
-        noneCheckFunc()
-        
-        switch (count % 4) {
-            case 3: favblank1.classList.remove("noneBlank");
-            case 2: {favblank1.classList.remove("noneBlank");
-                favblank2.classList.remove("noneBlank")};
-        }
-
-        console.log(favblank1)
-        console.log(favblank2)
-    }
-}
-
 function ReloadDOM() {
     var cook = document.cookie;
     if (cook != "") {
@@ -82,8 +32,6 @@ function ReloadDOM() {
         let favContainer = document.getElementById("favoriteAll");
         favContainer.classList.add("hide")
     }
-
-    reloadFavBlank()
 }
 
 function ReloadMap() {
@@ -124,6 +72,3 @@ function FavoritesClick(e) {
 }
 
 document.addEventListener('DOMContentLoaded', ReloadDOM());
-
-window.addEventListener("resize", reloadFavBlank());
-

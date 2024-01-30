@@ -93,7 +93,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  background: url("../src/body-snow.png") no-repeat;
 }
 body nav {
   background-color: #BEE154;
@@ -127,19 +126,15 @@ body .hide {
   display: none !important;
 }
 body .all-services__all-cards {
+  width: 100%;
+  max-width: 1153px;
   margin-top: 23px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  display: grid;
+  row-gap: 35px;
+  -webkit-column-gap: 35px;
+     -moz-column-gap: 35px;
+          column-gap: 35px;
+  grid-template-columns: repeat(4, 4fr);
 }
 body .all-services__all-cards .none {
   display: none !important;
@@ -167,7 +162,6 @@ body .all-services__all-cards .card {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 35px;
   background: rgb(255, 255, 255);
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
@@ -476,6 +470,9 @@ body .hide-modal {
   * section {
     max-width: 856px;
   }
+  body .all-services__all-cards {
+    grid-template-columns: repeat(3, 3fr);
+  }
   #modal .modal {
     width: 50%;
   }
@@ -486,6 +483,9 @@ body .hide-modal {
 @media (max-width: 900px) {
   * section {
     max-width: 559px;
+  }
+  body .all-services__all-cards {
+    grid-template-columns: repeat(2, 2fr);
   }
   #modal .modal {
     width: 85%;
@@ -526,9 +526,9 @@ body .hide-modal {
     text-align: center;
   }
   body .all-services__all-cards {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+    justify-items: center !important;
   }
   body .all-services__all-cards .card {
     max-width: 200px;
@@ -538,7 +538,6 @@ body .hide-modal {
     padding-top: 10px;
     padding-bottom: 12px;
     border-radius: 7px;
-    margin-bottom: 20px;
   }
   body .all-services__all-cards .card .card-in__logo {
     min-height: 156px;

@@ -103,7 +103,7 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background: url('../src/body-snow.png') no-repeat;
+    // background: url('../src/body-snow.png') no-repeat;
 
     nav {
         background-color: $green;
@@ -131,11 +131,15 @@ body {
     .all-services {
 
         &__all-cards {
+            width: 100%;
+            max-width: 1153px;
             margin-top: 23px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            display: grid;
+            row-gap: 35px;
+            column-gap: 35px;
+            grid-template-columns: repeat(4, 4fr);
+            // grid-template-rows: repeat(5, minmax(0px, 360px));
+            
 
             .none {
                 display: none !important;
@@ -158,7 +162,6 @@ body {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                margin-bottom: 35px;
                 background: rgba(255, 255, 255);
                 transition: all 0.4s;
                 
@@ -474,6 +477,14 @@ body {
         }
     }
 
+    body {
+        .all-services {
+            &__all-cards {
+                grid-template-columns: repeat(3, 3fr);
+            }
+        }
+    }
+
     #modal {
         .modal {
             width: 50%;
@@ -489,6 +500,14 @@ body {
     * {
         section {
             max-width: 559px;
+        }
+    }
+
+    body {
+        .all-services {
+            &__all-cards {
+                grid-template-columns: repeat(2, 2fr);
+            }
         }
     }
 
@@ -552,7 +571,9 @@ body {
             }
 
             &__all-cards {
-                justify-content: center;
+                grid-template-columns: 1fr;
+                row-gap: 20px;
+                justify-items: center !important;
                 .card {
                     max-width: 200px;
                     min-height: 275px;
@@ -561,7 +582,6 @@ body {
                     padding-top: 10px;
                     padding-bottom: 12px;
                     border-radius: 7px;
-                    margin-bottom: 20px;
     
                     .card-in {
                         &__logo {
