@@ -104,6 +104,8 @@ body {
     align-items: center;
     width: 100%;
     // background: url('../src/body-snow.png') no-repeat;
+    background: url('../src/body-main2.svg') center no-repeat;
+    background-position: right top;
 
     nav {
         background-color: $green;
@@ -647,5 +649,17 @@ body {
                 font-size: 18px !important;
             }
         }
+    }
+}
+
+@media (max-width: 900px) {
+    body {
+        background-size: 150%;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        background: rgba(255, 255, 255, 1);
     }
 }

@@ -39,7 +39,6 @@ function ReloadMap() {
     for (var i = 0; i < allCards.length; i++) {
         document.cookie = `favcard-${i.toString()}=${allCards[i].classList[1]}; max-age=63000000`;
     }
-
     ReloadDOM();
 }
 
@@ -72,3 +71,6 @@ function FavoritesClick(e) {
 }
 
 document.addEventListener('DOMContentLoaded', ReloadDOM());
+document.addEventListener('DOMContentLoaded', ReloadMap());
+
+document.addEventListener('close', ReloadMap());
