@@ -34,3 +34,5 @@ function modalWindow() {
 let blank1 = document.getElementById("blank"),
     blank2 = document.getElementById("blank2"),
     cardElements = document.getElementById("allCards").querySelectorAll(".card");
+
+    

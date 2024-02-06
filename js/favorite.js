@@ -73,4 +73,5 @@ function FavoritesClick(e) {
 document.addEventListener('DOMContentLoaded', ReloadDOM());
 document.addEventListener('DOMContentLoaded', ReloadMap());
 
+
 document.addEventListener('close', ReloadMap());
