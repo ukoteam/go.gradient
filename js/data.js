@@ -30,6 +30,6 @@ xhr.onload = function() {
     }
 }
 
-xhr.open('GET', 'https://github.com/ukoteam/go.gradient/blob/main/json/cards.json', true);
+xhr.open('GET', '/../json/cards.json', true);
 xhr.send(null)
 

@@ -10,7 +10,7 @@ function FunkOn(e) {
     if (e.slice(0, 3) == "fav") {
         e = e.slice(3)
     }
-    el.style.background = `url(${"https://github.com/ukoteam/go.gradient/tree/main/src/" + e + ".png"}) center/cover no-repeat`;
+    el.style.background = `url(${"../src/" + e + ".png"}) center/cover no-repeat`;
 }
 
 function FunkOut(e) {
