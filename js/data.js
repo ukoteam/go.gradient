@@ -1,12 +1,8 @@
-// import {FavoritesClick} from 'main.js';
-
 var xhr = new XMLHttpRequest();
 
 xhr.onload = function() {
     if (xhr.status == 200) {
         responseObject = JSON.parse(xhr.responseText);
-
-        console.log(responseObject);
 
         var newContent = ``;
         for (var i = 0; i < responseObject.cards.length; i++) {
@@ -31,10 +27,9 @@ xhr.onload = function() {
         }
 
         document.getElementById("allCards").innerHTML = newContent;
-
-        console.log(newContent);
     }
 }
 
-xhr.open('GET', '../json/cards.json', true);
+xhr.open('GET', 'https://github.com/ukoteam/go.gradient/blob/main/json/cards.json', true);
 xhr.send(null)
+

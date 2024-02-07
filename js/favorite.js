@@ -19,7 +19,11 @@ function ReloadDOM() {
 
                 favcardId.classList.remove("none");
                 counter++
+
+                console.log("OK")
             }
+
+            console.log(sessionStorage)
         }
 
         let favContainer = document.getElementById("favoriteAll");
@@ -70,6 +74,9 @@ function FavoritesClick(e) {
     ReloadMap();
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("))))")
+});
 document.addEventListener('DOMContentLoaded', ReloadDOM());
 document.addEventListener('DOMContentLoaded', ReloadMap());
 
