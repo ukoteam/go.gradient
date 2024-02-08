@@ -1,0 +1,255 @@
+// Цвета сайта
+$green: #BEE154;
+$blue: #489FDF;
+$dark-blue: #001E64;
+
+body {
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 85px;
+        height: 100%;
+        
+        .service-form {
+            width: 100%;
+            max-width: 762px;
+            min-height: 28px;
+            padding: 35px;
+            display: flex;
+            border: 2px solid $dark-blue;
+            margin-top: 24px;
+            background-color: #fff;
+            flex-direction: column;
+
+            .hide {
+                display: none;
+            }
+
+            &__name {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                button {
+                    width: 27px;
+                    height: 27px;
+                    border: none;
+                    background-color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .button-plus {
+                        transform: rotate(90deg);
+                        margin-left: -30.4px;
+                        transition: transform 0.3s;
+                    }
+                    .minus {
+                        transform: rotate(0deg) !important;
+                    }
+                }
+            }
+
+            &__form {
+                margin-top: 29px;
+                display: flex;
+                flex-direction: column;
+
+                .main-form {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    p {
+                        font-size: 18px;
+                        font-weight: 300;
+                    }
+
+                    form {
+                        margin-top: 2px;
+                        width: 100%;
+                        max-width: 379px;
+                        input {
+                            max-width: 379px;
+                            width: 100%;
+                            padding-left: 12px;
+                            padding-right: 12px;
+                            padding-top: 13px;
+                            padding-bottom: 13px;
+                            font-size: 18px;
+                            margin-top: 5px;
+                            border-bottom: 2px solid $dark-blue;
+                            background-color: #F6FAFD;
+                            border-top: none;
+                            border-left: none;
+                            border-right: none;
+                            color: $dark-blue;
+                        }
+
+                        input:focus {
+                            outline: none;
+                            border: 2px solid $green;
+                        }
+
+                        button {
+                            border: 1px solid $dark-blue;
+                            font-size: 16px;
+                            padding-top: 6px;
+                            padding-bottom: 5px;
+                            padding-left: 13px;
+                            padding-right: 13px;
+                            color: $dark-blue;
+                            background-color: #fff;
+                            font-weight: 300;
+                            margin-top: 7px;
+                        }
+
+                        .button-bg {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 100%;
+                            max-width: 360px;
+
+                            .common-bg {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-between;
+                                align-items: center;
+                                width: 100%;
+                                max-width: 160px;
+
+                                input {
+                                    width: 17px;
+                                    height: 17px;
+                                }
+
+                                p {
+                                    font-size: 16px;
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .card {
+                width: 100%;
+                max-width: 262px;
+                min-height: 360px;
+                padding-left: 22px;
+                padding-right: 22px;
+                padding-top: 16px;
+                padding-bottom: 19px;
+                border: 1px solid $dark-blue;
+                border-radius: 12px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                background: rgba(255, 255, 255);
+                transition: all 0.4s;
+                
+                .hidden {
+                    display: none;
+                }
+
+                .card-in {
+
+                    &__logo {
+                        padding: 4px;
+                        // margin-bottom: 15px;
+                        min-height: 205px;
+                        width: 100%;
+                        display: flex;
+                        justify-content: end;
+    
+                        .flag {
+                            width: 28px;
+                            height: 34px;
+                            cursor: pointer;
+                        }
+
+                        .false {
+                            background: url("../src/flag-false.svg") center/cover no-repeat;
+                        }
+    
+                        .true {
+                            background: url("../src/flag-true.svg") center/cover no-repeat;
+                        }
+                    }
+
+                    h3 {
+                        text-align: center;
+                        font-weight: 300 !important;
+                    }
+                }
+
+                &__info {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding-bottom: 16px;
+                    min-height: 285px;
+
+                    p {
+                        margin-top: 7px;
+                    }
+                }
+
+                &__buttons {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    
+                    .link-button {
+                        padding-left: 52px;
+                        padding-right: 52px;
+                        padding-top: 8px !important;
+                        background-color: $dark-blue;
+                        color: white;
+                        font-family: "HelventicaNeueCyr";
+                        font-weight: 200;
+                        border-radius: 12px;
+                        border: none;
+                    }
+
+                    .info-button {
+                        border: 1px solid $dark-blue;
+                        border-radius: 12px;
+                        padding-right: 12px;
+                        padding-bottom: 6px !important;
+                        padding-left: 12px;
+                        font-family: 'Inter';
+                        color: $dark-blue;
+                        background-color: white;
+
+                    }
+
+                    .info-button:hover {
+                        color: white;
+                        background-color: $dark-blue;
+                    }
+
+                }
+            }
+        }
+
+        
+        .addNewService {
+            max-width: 200px;
+            margin-top: 25px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 25px;
+            padding-right: 25px;
+            color: white;
+            background-color: $dark-blue;
+            border: none;
+        }
+    }
+}

@@ -1,4 +1,6 @@
 var xhr = new XMLHttpRequest();
+var fs = require('fs');
+
 
 xhr.onload = function() {
     if (xhr.status == 200) {
@@ -32,4 +34,3 @@ xhr.onload = function() {
 
 xhr.open('GET', '/../json/cards.json', true);
 xhr.send(null)
-
