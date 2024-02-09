@@ -18,8 +18,14 @@ newName.addEventListener('input', () => {
 });
 
 newBigName.addEventListener('input', () => {
-    document.getElementById('cardNewDescription').innerHTML = newBigName.value;
-    document.getElementById('cardNewDescriptionBG').innerHTML = newBigName.value;
+    if (newName.value != null) {
+        document.getElementById('cardNewDescription').innerHTML = newBigName.value + ` <span id="cardNewName">${newName.value}</span>`;
+        document.getElementById('cardNewDescriptionBG').innerHTML = newBigName.value + ` <span id="cardNewNameBG">${newName.value}</span>`;
+    } else {
+        document.getElementById('cardNewDescription').innerHTML = newBigName.value + ` <span id="cardNewName"></span>`;
+        document.getElementById('cardNewDescriptionBG').innerHTML = newBigName.value + ` <span id="cardNewNameBG"></span>`;
+    }
+    
 });
 
 newDescription.addEventListener('input', () => {
@@ -34,30 +40,12 @@ form.addEventListener('keydown', function(event) {
 });
 
 // Сохранение картинки
-let newLogo = document.getElementById('newLogo'),
-    newLabelLogo = document.getElementById('newLabelLogo')
-
-// function save (selectedFile)  {
-//     let image = document.getElementById('logo');
-//     let f = selectedFile.files[0];
-//     if (f) {
-//         image.style.background = URL.createObjectURL(f);
-//         localStorage.setItem('myImage', image.style.background);
-//     }
-// }
-
-
-
 newLogo.addEventListener('change', () => {
     const selectedFile = document.getElementById("newLogo").files[0];
     
 
     if (selectedFile.type == 'image/png' || selectedFile.type == 'image/jpg' || selectedFile.type == 'image/jpeg') {
-        var i = URL.createObjectURL(selectedFile)
-        console.log(selectedFile);
-        console.log(i);
-        // save(selectedFile) 
-
+        var i = URL.createObjectURL(selectedFile);
         let image = document.getElementById('logo');
         image.src = i
     }
