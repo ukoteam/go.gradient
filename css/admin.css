@@ -12,10 +12,14 @@ body .main-container {
   margin-top: 85px;
   height: 100%;
 }
+body .main-container .shown {
+  max-height: 762px !important;
+}
 body .main-container .service-form {
   width: 100%;
   max-width: 762px;
-  min-height: 28px;
+  max-height: 100px;
+  height: 100%;
   padding: 35px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -27,9 +31,9 @@ body .main-container .service-form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-body .main-container .service-form .hide {
-  display: none;
+  overflow: hidden;
+  -webkit-transition: max-height 0.7s;
+  transition: max-height 0.7s;
 }
 body .main-container .service-form__name {
   width: 100%;
@@ -109,7 +113,7 @@ body .main-container .service-form__form .main-form form {
   width: 100%;
   max-width: 379px;
 }
-body .main-container .service-form__form .main-form form input {
+body .main-container .service-form__form .main-form form .textForm {
   max-width: 379px;
   width: 100%;
   padding-left: 12px;
@@ -125,11 +129,16 @@ body .main-container .service-form__form .main-form form input {
   border-right: none;
   color: #001E64;
 }
-body .main-container .service-form__form .main-form form input:focus {
+body .main-container .service-form__form .main-form form .textForm:focus {
   outline: none;
   border: 2px solid #BEE154;
 }
-body .main-container .service-form__form .main-form form button {
+body .main-container .service-form__form .main-form form .fileForm {
+  margin-top: 7px;
+  opacity: 0;
+  display: none;
+}
+body .main-container .service-form__form .main-form form label {
   border: 1px solid #001E64;
   font-size: 16px;
   padding-top: 6px;
@@ -139,7 +148,7 @@ body .main-container .service-form__form .main-form form button {
   color: #001E64;
   background-color: #fff;
   font-weight: 300;
-  margin-top: 7px;
+  cursor: pointer;
 }
 body .main-container .service-form__form .main-form form .button-bg {
   display: -webkit-box;
@@ -212,7 +221,7 @@ body .main-container .service-form .card .hidden {
 }
 body .main-container .service-form .card .card-in__logo {
   padding: 4px;
-  min-height: 205px;
+  height: 205px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;

@@ -31,42 +31,28 @@
                 </button>
             </div>
 
-            <div class="service-form__form hide">
+            <div class="service-form__form">
                 <div class="main-form">
-                    <form>
+                    <form id="form">
                         <p>Общая информация:</p>
 
-                        <input type="text" name="name" id="newName" placeholder="Название">
+                        <input type="text" class="textForm" name="name" id="newName" placeholder="Название">
 
-                        <input type="text" name="bigName" id="newBigName" placeholder="Краткое описание">
+                        <input type="text" class="textForm" name="bigName" id="newBigName" placeholder="Краткое описание">
 
-                        <input type="text" name="description" id="newDescription" placeholder="Описание сервиса">
+                        <input type="text" class="textForm" name="description" id="newDescription" placeholder="Описание сервиса">
 
-                        <input type="text" name="link" id="newLink" placeholder="Ссылка">
+                        <input type="text" class="textForm" name="link" id="newLink" placeholder="Ссылка">
 
-                        <p style="margin-top: 19px;">Логотип:</p>
-                        <button>Загрузить</button>
-
-                        <p style="margin-top: 19px;">Фон карточки:</p>
-                        
-                        <div class="button-bg">
-                            <button>Загрузить</button>
-                            <p>или</p>
-                            <div class="common-bg">
-                                <input type="checkbox" name="background" id="newBackgroundCommon">
-
-                                <p>Стандартный фон</p>
-                            </div>
-                            
-                        </div>
-                        
+                        <p style="margin-top: 19px; margin-bottom:10px;">Логотип:</p>
+                        <label for="newLogo" id="newLabelLogo">Загрузить</label>
+                        <input type="file" class="fileForm" name="logo" id="newLogo">
                     </form>
 
                     <div class="card" id="common">
                         <div class="card-in">
-                            <div class="card-in__logo" id="logo" style="background: url('src/common-logo.png') center/cover no-repeat;">
-                                <div class="flag false"></div>
-                            </div>
+                            <img src="src/common-logo.png" class="card-in__logo" id="logo">
+                            <!-- <div class="flag false"></div> -->
             
                             <h3 ><p style="font-size: 22px;" id="cardNewDescription">Краткое описание </p><span id="cardNewName">Название</span></h3>
                         </div>

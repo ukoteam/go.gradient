@@ -10,21 +10,24 @@ body {
         align-items: center;
         margin-top: 85px;
         height: 100%;
+
+        .shown {
+            max-height: 762px !important;
+        }
         
         .service-form {
             width: 100%;
             max-width: 762px;
-            min-height: 28px;
+            max-height: 100px;
+            height: 100%;
             padding: 35px;
             display: flex;
             border: 2px solid $dark-blue;
             margin-top: 24px;
             background-color: #fff;
             flex-direction: column;
-
-            .hide {
-                display: none;
-            }
+            overflow: hidden;
+            transition: max-height 0.7s;
 
             &__name {
                 width: 100%;
@@ -71,7 +74,7 @@ body {
                         margin-top: 2px;
                         width: 100%;
                         max-width: 379px;
-                        input {
+                        .textForm {
                             max-width: 379px;
                             width: 100%;
                             padding-left: 12px;
@@ -88,12 +91,18 @@ body {
                             color: $dark-blue;
                         }
 
-                        input:focus {
+                        .textForm:focus {
                             outline: none;
                             border: 2px solid $green;
                         }
 
-                        button {
+                        .fileForm {
+                            margin-top: 7px;
+                            opacity: 0;
+                            display: none;
+                        }
+
+                        label {
                             border: 1px solid $dark-blue;
                             font-size: 16px;
                             padding-top: 6px;
@@ -103,7 +112,7 @@ body {
                             color: $dark-blue;
                             background-color: #fff;
                             font-weight: 300;
-                            margin-top: 7px;
+                            cursor: pointer;
                         }
 
                         .button-bg {
@@ -162,7 +171,7 @@ body {
                     &__logo {
                         padding: 4px;
                         // margin-bottom: 15px;
-                        min-height: 205px;
+                        height: 205px;
                         width: 100%;
                         display: flex;
                         justify-content: end;
