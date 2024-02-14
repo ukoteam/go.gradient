@@ -26,7 +26,30 @@ xhr.onload = function() {
             newContent += `</div>`;
         }
 
+        var newFavContent = ``;
+        for (var i = 0; i < responseObject.cards.length; i++) {
+            newFavContent += `<div class="card none" id="fav${responseObject.cards[i].id}">`;
+            newFavContent += `<div class="card-in">`;
+            newFavContent += `<div class="card-in__logo" style="background: url(${responseObject.cards[i].logo}) center/cover no-repeat;">`;
+            newFavContent += `<div class="flag false" onclick="FavoritesClick('${responseObject.cards[i].id}')"></div>`;
+            newFavContent += `</div>`;
+            newFavContent += `<h3>${responseObject.cards[i].nameDescription} <span>${responseObject.cards[i].name}</span></h3>`;
+            newFavContent += `</div>`;
+            newFavContent += `<div class="card__info hidden">`;
+            newFavContent += `<h3>${responseObject.cards[i].nameDescription} <span>${responseObject.cards[i].name}</span></h3>`;
+            newFavContent += `<p>${responseObject.cards[i].description}</p>`;
+            newFavContent += `</div>`
+            newFavContent += `<div class="card__buttons">`;
+            newFavContent += `<a href="${responseObject.cards[i].link}" target="_blank">`;
+            newFavContent += `<button class="link-button">Перейти</button>`
+            newFavContent += `</a>`
+            newFavContent += `<button class="info-button" onmouseover="FunkOn('fav${responseObject.cards[i].id}')" onmouseout="FunkOut('fav${responseObject.cards[i].id}')">?</button>`;
+            newFavContent += `</div>`;
+            newFavContent += `</div>`;
+        }
+
         document.getElementById("allCards").innerHTML = newContent;
+        document.getElementById("favoriteAll").querySelector('.all-services__all-cards').innerHTML = newFavContent;
     }
 }
 

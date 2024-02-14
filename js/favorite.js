@@ -6,6 +6,7 @@ function ReloadDOM() {
         var counter = 0;
         for (var i = 0; i < cookList.length; i++) {
             var cookArgs = cookList[i].split('=');
+            console.log(cookArgs[0].slice(3))
             let cookieId = document.getElementById(cookArgs[0].slice(3)).querySelector('.flag'),
                 favcookieId = document.getElementById(cookArgs[0]).querySelector('.flag'),
                 favcardId = document.getElementById(cookArgs[0]);
@@ -22,8 +23,6 @@ function ReloadDOM() {
 
                 console.log("OK")
             }
-
-            console.log(sessionStorage)
         }
 
         let favContainer = document.getElementById("favoriteAll");
@@ -47,6 +46,7 @@ function ReloadMap() {
 }
 
 function FavoritesClick(e) {
+    console.log('Ok')
     let cardAll = document.getElementById(e).querySelector(".flag");
     let cardFavAll = document.getElementById('fav' + e).querySelector(".flag");
 
@@ -74,11 +74,16 @@ function FavoritesClick(e) {
     ReloadMap();
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('onload', async function() {
+    await new Promise((resolve, reject) => setTimeout(resolve, 1000))
     console.log("))))")
+    ReloadDOM();
+    ReloadMap()
 });
-document.addEventListener('DOMContentLoaded', ReloadDOM());
-document.addEventListener('DOMContentLoaded', ReloadMap());
+
+
+// document.addEventListener('DOMContentLoaded', ReloadDOM());
+// document.addEventListener('DOMContentLoaded', ReloadMap());
 
 
 document.addEventListener('close', ReloadMap());

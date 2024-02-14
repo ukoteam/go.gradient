@@ -1,6 +1,3 @@
-import fs from 'fs';
-const fs = require("fs");
-
 let newButton = document.getElementById('newButton'),
     newForm = document.getElementById('newForm').querySelector('.service-form')
 
@@ -52,25 +49,4 @@ newLogo.addEventListener('change', () => {
         let image = document.getElementById('logo');
         image.src = i
     }
-})
-
-
-
-document.getElementById("addNewService").addEventListener('click', () => {
-    const newData = {
-        id: "test",
-        name: document.getElementById("newName").value,
-        nameDescription: document.getElementById("newBigName").value,
-        logo: "...", 
-        description: document.getElementById("newDescription").value,
-        background: "../src/common.png",
-        link: document.getElementById("newLink").value
-    };
-
-    let raw = fs.readFileSync('../json/cards.json');
-    let parseData = JSON.parse(raw);
-    parseData.push(newData);
-
-    console.log(parseData)
-
 })
