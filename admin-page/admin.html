@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактирование</title>
+    <link rel="stylesheet" href="../css/styles.min.css">
+    <link rel="stylesheet" href="../css/admin.min.css">
+    <link rel="shortcut icon" href="../src/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <nav>
+        <div class="nav-text">
+            <img src="../src/gradient-logo-header.svg" alt="logo-header" id="logo-header"/>
+            <h2 class="h2-ser">Цифровые сервисы компании <span>«Градиент»</span></h2>
+
+            <h2 class="h2-go" style="display: none;">Go.gradient</h2>
+        </div>
+    </nav>
+
+    <section class="main-container" id="newForm">
+        <h1 align="center">Изменение структуры</h1>
+
+        <div class="service-form">
+            <div class="service-form__name">
+                <h2 style="cursor: pointer;">Добавить сервис</h2>
+
+                <button id="newButton">
+                    <img src="../src/plus.svg" alt="plus">
+                    <img src="../src/plus.svg" class="button-plus" alt="plus">
+                </button>
+            </div>
+
+            <div class="service-form__form">
+                <div class="main-form">
+                    <form id="form">
+                        <p>Общая информация:</p>
+
+                        <input type="text" class="textForm" name="name" id="newName" placeholder="Название">
+
+                        <input type="text" class="textForm" name="bigName" id="newBigName" placeholder="Краткое описание">
+
+                        <input type="text" class="textForm" name="description" id="newDescription" placeholder="Описание сервиса">
+
+                        <input type="text" class="textForm" name="link" id="newLink" placeholder="Ссылка">
+
+                        <p style="margin-top: 19px; margin-bottom:10px;">Логотип:</p>
+                        <label for="newLogo" id="newLabelLogo">Загрузить</label>
+                        <input type="file" class="fileForm" name="logo" id="newLogo">
+
+                        <input type="submit" value="Отправить" id="newCard" style="display: none;">
+                        <label for="newCard" id="newCardButton">Добавить сервис</label>
+                    </form>
+
+                    <div class="card" id="common">
+                        <div class="card-in">
+                            <img src="../src/common-logo.png" class="card-in__logo" id="logo">
+                            <!-- <div class="flag false"></div> -->
+            
+                            <h3 id="cardNewDescription">Краткое описание <span id="cardNewName">Название</span></h3>
+                        </div>
+        
+                        <div class="card__info hidden">
+                            <h3 id="cardNewDescriptionBG">Краткое описание <span id="cardNewNameBG">Название</span></h3>
+
+                            <p id="cardNewBG">Описание</p>
+                        </div>
+        
+                        <div class="card__buttons">
+                            <button class="link-button">Перейти</button>
+                            
+        
+                            <button class="info-button" onmouseover="FunkOn('common')" onmouseout="FunkOut('common')">?</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="addNewService" id="addNewService">Добавить сервис</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- <footer>
+        <div class="text-div">
+            <h3>Градиент, 2023 г.</h3>
+
+            <a href="mailto:i-support@gradient.ru"><button>Связаться</button></a>
+        </div>
+    </footer> -->
+    
+
+    <script src="../js/main.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>
