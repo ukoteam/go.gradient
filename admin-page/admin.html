@@ -21,7 +21,7 @@
     <section class="main-container" id="newForm">
         <h1 align="center">Изменение структуры</h1>
 
-        <div class="service-form">
+        <div class="service-form new">
             <div class="service-form__name">
                 <h2 style="cursor: pointer;">Добавить сервис</h2>
 
@@ -79,7 +79,67 @@
                 <button class="addNewService" id="addNewService">Добавить сервис</button>
             </div>
         </div>
+
+        <div class="service-form edit">
+            <div class="service-form__name">
+                <h2 style="cursor: pointer;">Изменить сервис</h2>
+
+                <button id="editButton">
+                    <img src="../src/plus.svg" alt="plus">
+                    <img src="../src/plus.svg" class="button-plus" alt="plus">
+                </button>
+            </div>
+
+            <div class="service-form__form">
+                <div class="main-form">
+                    <form id="form" action="/editCard" enctype="multipart/form-data" method="post">
+                        <p>Общая информация:</p>
+
+                        <input type="text" class="textForm" name="name" id="editName" placeholder="Название">
+
+                        <input type="text" class="textForm" name="bigName" id="editBigName" placeholder="Краткое описание">
+
+                        <input type="text" class="textForm" name="description" id="editDescription" placeholder="Описание сервиса">
+
+                        <input type="text" class="textForm" name="link" id="editLink" placeholder="Ссылка">
+
+                        <p style="margin-top: 19px; margin-bottom:10px;">Логотип:</p>
+                        <label for="editLogo" id="editLabelLogo">Загрузить</label>
+                        <input type="file" class="fileForm" name="logo" id="editLogo">
+
+                        <input type="submit" value="Отправить" id="editCard" style="display: none;">
+                        <label for="editCard" id="editCardButton">Добавить сервис</label>
+                    </form>
+
+                    <div class="card" id="commonEdit">
+                        <div class="card-in">
+                            <img src="../src/common-logo.png" class="card-in__logo" id="logo">
+                            <div class="flag false"></div>
+            
+                            <h3 id="cardEditDescription">Краткое описание <span id="cardEditName">Название</span></h3>
+                        </div>
+        
+                        <div class="card__info hidden">
+                            <h3 id="cardEditDescriptionBG">Краткое описание <span id="cardEditNameBG">Название</span></h3>
+
+                            <p id="cardEditBG">Описание</p>
+                        </div>
+        
+                        <div class="card__buttons">
+                            <button class="link-button">Перейти</button>
+                            
+        
+                            <button class="info-button" onmouseover="FunkOn('commonEdit')" onmouseout="FunkOut('commonEdit')">?</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="addNewService" id="addNewService">Добавить сервис</button>
+            </div>
+        </div>
     </section>
+
 
     <!-- <footer>
         <div class="text-div">
@@ -92,5 +152,6 @@
 
     <script src="../js/main.js"></script>
     <script src="../js/admin.js"></script>
+    <script src="../js/adminEdit.js"></script>
 </body>
 </html>

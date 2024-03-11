@@ -16,31 +16,30 @@ app.use(express.static(path.resolve(__dirname, '..')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// const storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//         cb(null, 'src/');
-//     },
-//     filename: function (req, file, cb) {
-//         cb(null, file.fieldname + '-' + Date.now());
-//     }
-// })
+let raw = fs.readFileSync('../json/cards.json');
+let parseData = JSON.parse(raw);
 
-var upload = multer()
-app.post('/addNewCard', upload.array(), function (req, res, next) {
-    console.log(req.body.name)
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, '../src/');
+    },
+    filename: function (req, file, cb) {
+        cb(null, `${file.fieldname}-${Number(parseData.cards.slice(-1)[0].id.slice(-2)) + 1}.png`);
+    }
+})
 
+var upload = multer({ storage })
+app.post('/addNewCard', upload.single('logo'), function (req, res, next) {
     const newData = {
-        id: "test",
+        id: `card-${Number(parseData.cards.slice(-1)[0].id.slice(-2)) + 1}`,
         name: req.body.name,
         nameDescription: req.body.bigName,
-        logo: "...", 
+        logo: `../src/logo-${Number(parseData.cards.slice(-1)[0].id.slice(-2)) + 1}.png`, 
         description: req.body.description,
         background: "../src/common.png",
         link: req.body.link
     };
 
-    let raw = fs.readFileSync('../json/cards.json');
-    let parseData = JSON.parse(raw);
     let newObject = JSON.stringify(newData);
     newObject = JSON.parse(newObject);
     parseData.cards.push(newObject);

@@ -1,11 +1,34 @@
 let newButton = document.getElementById('newButton'),
-    newForm = document.getElementById('newForm').querySelector('.service-form')
+    newForm = document.getElementById('newForm').querySelector('.new')
+    editButton = document.getElementById('editButton'),
+    editForm = document.getElementById('newForm').querySelector('.edit')
 
 newButton.addEventListener('click', () => {
     newForm.classList.toggle('shown');
 
     let minus = newButton.querySelector('.button-plus')
     minus.classList.toggle('minus');
+
+    if (editForm.classList.contains('shown')) {
+        editForm.classList.remove('shown');
+    }
+
+    let minusOther = editButton.querySelector('.button-plus')
+        minusOther.classList.remove('minus');
+})
+
+editButton.addEventListener('click', () => {
+    editForm.classList.toggle('shown');
+
+    let minus = editButton.querySelector('.button-plus')
+    minus.classList.toggle('minus');
+
+    if (newForm.classList.contains('shown')) {
+        newForm.classList.remove('shown');
+
+        let minusOther = newButton.querySelector('.button-plus')
+        minusOther.classList.remove('minus');
+    }
 })
 
 let newName = document.getElementById('newName'),
@@ -38,15 +61,3 @@ form.addEventListener('keydown', function(event) {
         event.preventDefault();
     }
 });
-
-// Сохранение картинки
-newLogo.addEventListener('change', () => {
-    const selectedFile = document.getElementById("newLogo").files[0];
-    
-
-    if (selectedFile.type == 'image/png' || selectedFile.type == 'image/jpg' || selectedFile.type == 'image/jpeg') {
-        var i = URL.createObjectURL(selectedFile);
-        let image = document.getElementById('logo');
-        image.src = i
-    }
-})
