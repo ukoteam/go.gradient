@@ -115,6 +115,16 @@ body {
                             cursor: pointer;
                         }
 
+                        .labelButton {
+                            background-color: $dark-blue;
+                            color: white;
+                            padding-left: 25px;
+                            padding-right: 25px;
+                            padding-top: 10px;
+                            padding-bottom: 10px;
+                            font-size: 18px;
+                        }
+
                         .button-bg {
                             display: flex;
                             flex-direction: row;
@@ -142,6 +152,8 @@ body {
                                 }
                             }
                         }
+
+                        
                     }
                 }
             }
@@ -262,3 +274,19 @@ body {
         }
     }
 }
+
+#editSelect {
+    max-width: 379px;
+    width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    font-size: 18px;
+    margin-top: 5px;
+    border: 2px solid $dark-blue;
+    background-color: #F6FAFD;
+    color: $dark-blue;
+    cursor: pointer;
+}
+

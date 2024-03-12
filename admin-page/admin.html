@@ -49,7 +49,8 @@
                         <input type="file" class="fileForm" name="logo" id="newLogo">
 
                         <input type="submit" value="Отправить" id="newCard" style="display: none;">
-                        <label for="newCard" id="newCardButton">Добавить сервис</label>
+                        <br><br><br>
+                        <label for="newCard" class="labelButton" id="newCardButton">Добавить сервис</label>
                     </form>
 
                     <div class="card" id="common">
@@ -75,8 +76,6 @@
                     </div>
 
                 </div>
-
-                <button class="addNewService" id="addNewService">Добавить сервис</button>
             </div>
         </div>
 
@@ -93,7 +92,12 @@
             <div class="service-form__form">
                 <div class="main-form">
                     <form id="form" action="/editCard" enctype="multipart/form-data" method="post">
-                        <p>Общая информация:</p>
+                        <p>Выберите название сервиса:</p>
+                        <select name="editSelect" id="editSelect" required>
+                            
+                        </select>
+
+                        <p style="margin-top: 10px;">Общая информация:</p>
 
                         <input type="text" class="textForm" name="name" id="editName" placeholder="Название">
 
@@ -108,7 +112,10 @@
                         <input type="file" class="fileForm" name="logo" id="editLogo">
 
                         <input type="submit" value="Отправить" id="editCard" style="display: none;">
-                        <label for="editCard" id="editCardButton">Добавить сервис</label>
+                        <br>
+                        <br>
+                        <br>
+                        <label for="editCard" class="labelButton" id="editCardButton">Редактировать сервис</label>
                     </form>
 
                     <div class="card" id="commonEdit">
@@ -135,7 +142,7 @@
 
                 </div>
 
-                <button class="addNewService" id="addNewService">Добавить сервис</button>
+                <!-- <button class="addNewService" id="addNewService">Добавить сервис</button> -->
             </div>
         </div>
     </section>
