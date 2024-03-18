@@ -104,10 +104,6 @@ body .main-container .service-form__form .main-form {
       -ms-flex-align: center;
           align-items: center;
 }
-body .main-container .service-form__form .main-form p {
-  font-size: 18px;
-  font-weight: 300;
-}
 body .main-container .service-form__form .main-form form {
   margin-top: 2px;
   width: 100%;

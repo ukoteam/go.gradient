@@ -61,3 +61,24 @@ form.addEventListener('keydown', function(event) {
         event.preventDefault();
     }
 });
+
+function getFileSelected(e) {
+    const file = e.target.files[0];
+    if (file) {
+        const pict = URL.createObjectURL(file)
+
+        if (e.srcElement.id == 'newLogo') {
+            document.getElementById('logo-new').src = pict
+        } else if (e.srcElement.id == 'editLogo') {
+            document.getElementById('logo-edit').src = pict
+        }
+    } else {
+        alert("Не получилось получить файл.")
+    }
+}
+
+let newLogo = document.getElementById('newLogo'),
+    editLogo = document.getElementById('editLogo');
+
+newLogo.addEventListener('change', getFileSelected)
+editLogo.addEventListener('change', getFileSelected)

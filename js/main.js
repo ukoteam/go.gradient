@@ -1,5 +1,8 @@
 // Функции для смены наполняемости карточек.
-function FunkOn(e) {
+function FunkOn(e, background) {
+    console.log(e)
+    console.log(background)
+
     var el = document.getElementById(e)
     var cardIn = el.querySelector('.card-in')
     var cardInfo = el.querySelector('.card__info')
@@ -10,7 +13,8 @@ function FunkOn(e) {
     if (e.slice(0, 3) == "fav") {
         e = e.slice(3)
     }
-    el.style.background = `url(${"../src/" + e + ".png"}) center/cover no-repeat`;
+    el.style.background = `url("${background}") center/cover no-repeat`;
+    
 }
 
 function FunkOut(e) {
