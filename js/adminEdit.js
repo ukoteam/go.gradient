@@ -38,6 +38,7 @@ xhr.onload = () => {
         }
 
         document.getElementById('editSelect').innerHTML = newOptions
+        document.getElementById('deleteSelect').innerHTML = newOptions
     }
 }
 

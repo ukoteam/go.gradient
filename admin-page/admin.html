@@ -139,9 +139,15 @@
                             <button class="info-button" onmouseover="FunkOn('commonEdit')" onmouseout="FunkOut('commonEdit')">?</button>
                         </div>
                     </div>
-
-
                 </div>
+
+                <form id="delete-form" action="/deleteCard" method="post" enctype="multipart/form-data">
+                    <select name="deleteSelect" id="deleteSelect" required>
+                        
+                    </select>
+
+                    <input type="submit" value="Удалить" id="delete-input">
+                </form>
 
                 <!-- <button class="addNewService" id="addNewService">Добавить сервис</button> -->
             </div>

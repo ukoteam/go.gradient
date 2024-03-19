@@ -1,9 +1,18 @@
 var xhr = new XMLHttpRequest();
 
+function ReloadStorage(data) {
+    for (let i = 0; i < data.cards.length; i++) {
+        if (localStorage.getItem(data.cards[i].id) == null) {
+            localStorage.setItem(data.cards[i].id, false)
+        }
+    }
+}
+
 xhr.onload = function() {
     if (xhr.status == 200) {
         responseObject = JSON.parse(xhr.responseText);
 
+        // Загрузка DOM
         var newContent = ``;
         for (var i = 0; i < responseObject.cards.length; i++) {
             newContent += `<div class="card" id="${responseObject.cards[i].id}">`;
@@ -31,7 +40,7 @@ xhr.onload = function() {
             newFavContent += `<div class="card none" id="fav${responseObject.cards[i].id}">`;
             newFavContent += `<div class="card-in">`;
             newFavContent += `<div class="card-in__logo" style="background: url(${responseObject.cards[i].logo}) center/cover no-repeat;">`;
-            newFavContent += `<div class="flag false" onclick="FavoritesClick('${responseObject.cards[i].id}')"></div>`;
+            newFavContent += `<div class="flag true" onclick="FavoritesClick('${responseObject.cards[i].id}')"></div>`;
             newFavContent += `</div>`;
             newFavContent += `<h3>${responseObject.cards[i].nameDescription} <span>${responseObject.cards[i].name}</span></h3>`;
             newFavContent += `</div>`;
@@ -50,6 +59,9 @@ xhr.onload = function() {
 
         document.getElementById("allCards").innerHTML = newContent;
         document.getElementById("favoriteAll").querySelector('.all-services__all-cards').innerHTML = newFavContent;
+    
+        // Обновление избранного
+        ReloadStorage(responseObject)
     }
 }
 

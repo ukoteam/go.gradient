@@ -105,6 +105,32 @@ app.post('/editCard', upload.single('logo-edit'), function (req, res, next) {
     res.redirect("../admin-page/admin.html")
 })
 
+app.post('/deleteCard', upload.single('logo'), function(req, res, next) {
+    raw = fs.readFileSync('../json/cards.json');
+    parseData = JSON.parse(raw);
+    let dataIndex = null;
+
+    console.log(req.body)
+    
+    for (let i = 0; i < parseData.cards.length; i++) {
+        if (parseData.cards[i].id == req.body.deleteSelect) {
+            dataIndex = i; 
+            break
+        }
+    }
+
+    fs.unlink(parseData.cards[dataIndex].logo, (err) => {
+        if (err) throw err;
+        console.log("Файл удалён!")
+    })
+
+    parseData.cards.splice(dataIndex, 1)
+    parseData = JSON.stringify(parseData);
+    fs.writeFileSync('../json/cards.json', parseData)
+
+    res.redirect("../admin-page/admin.html")
+})
+
 app.listen(port, () => {
     console.log(`Listening on port ${port}...`)
 })

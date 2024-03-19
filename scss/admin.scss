@@ -2,6 +2,25 @@
 $green: #BEE154;
 $blue: #489FDF;
 $dark-blue: #001E64;
+$red: #D73526;
+
+* {
+    select {
+        max-width: 379px;
+        width: 100%;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 13px;
+        padding-bottom: 13px;
+        font-size: 18px;
+        border: 2px solid $dark-blue;
+        background-color: #F6FAFD;
+        color: $dark-blue;
+        cursor: pointer;
+    }
+    
+    
+}
 
 body {
     
@@ -278,18 +297,25 @@ body {
     }
 }
 
-#editSelect {
-    max-width: 379px;
-    width: 100%;
-    padding-left: 12px;
-    padding-right: 12px;
-    padding-top: 13px;
-    padding-bottom: 13px;
+#delete-input {
+    color: $red;
+    border: 2px solid $red;
+    background: none;
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+    font-weight: 600;
     font-size: 18px;
-    margin-top: 5px;
-    border: 2px solid $dark-blue;
-    background-color: #F6FAFD;
-    color: $dark-blue;
     cursor: pointer;
 }
 
+#delete-form {
+    padding-top: 30px;
+    margin-top: 50px;
+    border-top: 1.5px solid $dark-blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}

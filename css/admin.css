@@ -1,3 +1,17 @@
+* select {
+  max-width: 379px;
+  width: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  font-size: 18px;
+  border: 2px solid #001E64;
+  background-color: #F6FAFD;
+  color: #001E64;
+  cursor: pointer;
+}
+
 body .main-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -321,17 +335,32 @@ body footer {
   margin-top: 100px;
 }
 
-#editSelect {
-  max-width: 379px;
-  width: 100%;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 13px;
-  padding-bottom: 13px;
+#delete-input {
+  color: #D73526;
+  border: 2px solid #D73526;
+  background: none;
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-right: 25px;
+  padding-bottom: 10px;
+  font-weight: 600;
   font-size: 18px;
-  margin-top: 5px;
-  border: 2px solid #001E64;
-  background-color: #F6FAFD;
-  color: #001E64;
   cursor: pointer;
+}
+
+#delete-form {
+  padding-top: 30px;
+  margin-top: 50px;
+  border-top: 1.5px solid #001E64;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
 }
