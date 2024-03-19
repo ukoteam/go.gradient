@@ -36,17 +36,17 @@
                     <form id="form" action="/addNewCard" enctype="multipart/form-data" method="post">
                         <p>Общая информация:</p>
 
-                        <input type="text" class="textForm" name="name" id="newName" placeholder="Название">
+                        <input type="text" class="textForm" name="name" id="newName" placeholder="Название" required>
 
                         <input type="text" class="textForm" name="bigName" id="newBigName" placeholder="Краткое описание">
 
-                        <input type="text" class="textForm" name="description" id="newDescription" placeholder="Описание сервиса">
+                        <input type="text" class="textForm" name="description" id="newDescription" placeholder="Описание сервиса" required>
 
-                        <input type="text" class="textForm" name="link" id="newLink" placeholder="Ссылка">
+                        <input type="text" class="textForm" name="link" id="newLink" placeholder="Ссылка" required>
 
-                        <p style="margin-top: 19px; margin-bottom:10px;">Логотип:</p>
+                        <p style="margin-top: 19px; margin-bottom:10px;">Логотип:<span style="color: red;">*</span></p>
                         <label for="newLogo" id="newLabelLogo">Загрузить</label>
-                        <input type="file" class="fileForm" name="logo" id="newLogo">
+                        <input type="file" class="fileForm" name="logo" id="newLogo" required>
 
                         <input type="submit" value="Отправить" id="newCard" style="display: none;">
                         <br><br><br>
@@ -99,13 +99,13 @@
 
                         <p style="margin-top: 10px;">Общая информация:</p>
 
-                        <input type="text" class="textForm" name="name" id="editName" placeholder="Название">
+                        <input type="text" class="textForm" name="name" id="editName" placeholder="Название" required>
 
                         <input type="text" class="textForm" name="bigName" id="editBigName" placeholder="Краткое описание">
 
-                        <input type="text" class="textForm" name="description" id="editDescription" placeholder="Описание сервиса">
+                        <input type="text" class="textForm" name="description" id="editDescription" placeholder="Описание сервиса" required>
 
-                        <input type="text" class="textForm" name="link" id="editLink" placeholder="Ссылка">
+                        <input type="text" class="textForm" name="link" id="editLink" placeholder="Ссылка" required>
 
                         <p style="margin-top: 19px; margin-bottom:10px;">Логотип:</p>
                         <label for="editLogo" id="editLabelLogo">Загрузить</label>
@@ -140,6 +140,7 @@
                         </div>
                     </div>
 
+
                 </div>
 
                 <!-- <button class="addNewService" id="addNewService">Добавить сервис</button> -->
@@ -148,13 +149,13 @@
     </section>
 
 
-    <!-- <footer>
+    <footer>
         <div class="text-div">
             <h3>Градиент, 2023 г.</h3>
 
-            <a href="mailto:i-support@gradient.ru"><button>Связаться</button></a>
+            <a href="../.."><button>На главную</button></a>
         </div>
-    </footer> -->
+    </footer>
     
 
     <script src="../js/main.js"></script>

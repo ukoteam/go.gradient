@@ -21,17 +21,15 @@ const storage = multer.diskStorage({
         cb(null, '../src/');
     },
     filename: function (req, file, cb) {
-        if (req.path == '/addNewCard') {
-            cb(null, `logo-${Number(parseData.cards.slice(-1)[0].id.slice(-2)) + 1}.png`);
-        } else if (req.path == '/editCard') {
-            console.log('ok')
-            cb(null, parseData.cards[dataIndex].logo);
-            
-        }
+        cb(null, `logo-${date}.png`);
     }
 })
 
 var upload = multer({ storage })
+
+let date = Date.now()
+console.log(date)
+
 app.post('/addNewCard', upload.single('logo'), function (req, res, next) {
     raw = fs.readFileSync('../json/cards.json');
     parseData = JSON.parse(raw);
@@ -40,7 +38,7 @@ app.post('/addNewCard', upload.single('logo'), function (req, res, next) {
         id: `card-${Number(parseData.cards.slice(-1)[0].id.slice(-2)) + 1}`,
         name: req.body.name,
         nameDescription: req.body.bigName,
-        logo: `../src/logo-${Number(parseData.cards.slice(-1)[0].id.slice(-2)) + 1}.png`, 
+        logo: `../src/logo-${date}.png`, 
         description: req.body.description,
         background: "../src/common.png",
         link: req.body.link
@@ -51,14 +49,14 @@ app.post('/addNewCard', upload.single('logo'), function (req, res, next) {
     parseData.cards.push(newObject);
     parseData = JSON.stringify(parseData);
     fs.writeFileSync('../json/cards.json', parseData)
+
+    date = Date.now()
+    console.log(date)
     
     res.redirect("../admin-page/admin.html")
 })
 
-app.post('/editCard', function (req, res, next) {
-
-    console.log(req)
-
+app.post('/editCard', upload.single('logo-edit'), function (req, res, next) {
     raw = fs.readFileSync('../json/cards.json');
     parseData = JSON.parse(raw);
     let dataIndex = null;
@@ -70,24 +68,39 @@ app.post('/editCard', function (req, res, next) {
         }
     }
 
-    console.log(parseData.cards)
-    console.log(req.body.editSelect)
-    console.log(req.body)
-    // req.file.filename = parseData.cards[dataIndex].logo;
+    console.log(req)
+    if (req.file) {
+        fs.unlink(parseData.cards[dataIndex].logo, (err) => {
+            if (err) throw err;
+            console.log("Файл удалён")
+        })
 
-    parseData.cards[dataIndex] = {
-        id: parseData.cards[dataIndex].id,
-        name: req.body.name,
-        nameDescription: req.body.bigName,
-        logo: parseData.cards[dataIndex].logo, 
-        description: req.body.description,
-        background: parseData.cards[dataIndex].background,
-        link: req.body.link
+        parseData.cards[dataIndex] = {
+            id: parseData.cards[dataIndex].id,
+            name: req.body.name,
+            nameDescription: req.body.bigName,
+            logo: `../src/logo-${date}.png`, 
+            description: req.body.description,
+            background: parseData.cards[dataIndex].background,
+            link: req.body.link
+        }
+    } else {
+        parseData.cards[dataIndex] = {
+            id: parseData.cards[dataIndex].id,
+            name: req.body.name,
+            nameDescription: req.body.bigName,
+            logo: parseData.cards[dataIndex].logo, 
+            description: req.body.description,
+            background: parseData.cards[dataIndex].background,
+            link: req.body.link
+        }
     }
 
     parseData = JSON.stringify(parseData);
     fs.writeFileSync('../json/cards.json', parseData)
 
+    date = Date.now()
+    console.log(date)
 
     res.redirect("../admin-page/admin.html")
 })
