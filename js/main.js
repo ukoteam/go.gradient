@@ -22,10 +22,13 @@ function FunkOut(e) {
     var cardIn = el.querySelector('.card-in')
     var cardInfo = el.querySelector('.card__info')
 
-    cardIn.classList.remove('hidden')
-    cardInfo.classList.add('hidden')
+    if (cardIn.classList.contains('hidden')) {
+        cardIn.classList.remove('hidden')
+        cardInfo.classList.add('hidden')
 
-    el.style.background = "rgba(256, 256, 256)";
+        el.style.background = "rgba(256, 256, 256)";
+    }
+
 }
 
 

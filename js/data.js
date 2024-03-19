@@ -30,7 +30,7 @@ xhr.onload = function() {
             newContent += `<a href="${responseObject.cards[i].link}" target="_blank">`;
             newContent += `<button class="link-button">Перейти</button>`
             newContent += `</a>`
-            newContent += `<button class="info-button" onmouseover="FunkOn('${responseObject.cards[i].id}', '${responseObject.cards[i].background}')" onmouseout="FunkOut('${responseObject.cards[i].id}')">?</button>`;
+            newContent += `<button class="info-button" onClick="FunkOut('${responseObject.cards[i].id}')" onmouseover="FunkOn('${responseObject.cards[i].id}', '${responseObject.cards[i].background}')" onmouseout="FunkOut('${responseObject.cards[i].id}')">?</button>`;
             newContent += `</div>`;
             newContent += `</div>`;
         }
@@ -52,7 +52,7 @@ xhr.onload = function() {
             newFavContent += `<a href="${responseObject.cards[i].link}" target="_blank">`;
             newFavContent += `<button class="link-button">Перейти</button>`
             newFavContent += `</a>`
-            newFavContent += `<button class="info-button" onmouseover="FunkOn('fav${responseObject.cards[i].id}', '${responseObject.cards[i].background}')" onmouseout="FunkOut('fav${responseObject.cards[i].id}')">?</button>`;
+            newFavContent += `<button class="info-button" onClick="FunkOut('fav${responseObject.cards[i].id}')" onmouseover="FunkOn('fav${responseObject.cards[i].id}', '${responseObject.cards[i].background}')" onmouseout="FunkOut('fav${responseObject.cards[i].id}')">?</button>`;
             newFavContent += `</div>`;
             newFavContent += `</div>`;
         }
