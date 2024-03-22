@@ -80,6 +80,10 @@
   font-weight: 300;
   margin-top: 5px;
 }
+* textarea {
+  font-family: "HelventicaNeueCyr", sans-serif;
+  font-weight: 300;
+}
 
 *::-moz-selection {
   background: rgba(75, 162, 221, 0.5);

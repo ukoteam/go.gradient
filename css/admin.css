@@ -28,7 +28,7 @@ body .main-container {
   min-height: calc(100vh - 307px);
 }
 body .main-container .shown {
-  max-height: 762px !important;
+  max-height: 842px !important;
 }
 body .main-container .service-form {
   width: 100%;
