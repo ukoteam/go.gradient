@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 
 let raw = fs.readFileSync('../json/cards.json'),
     parseData = JSON.parse(raw);
@@ -28,7 +28,6 @@ const storage = multer.diskStorage({
 var upload = multer({ storage })
 
 let date = Date.now()
-console.log(date)
 
 app.post('/addNewCard', upload.single('logo'), function (req, res, next) {
     raw = fs.readFileSync('../json/cards.json');
@@ -51,7 +50,7 @@ app.post('/addNewCard', upload.single('logo'), function (req, res, next) {
     fs.writeFileSync('../json/cards.json', parseData)
 
     date = Date.now()
-    console.log(date)
+    // console.log(date)
     
     res.redirect("../admin-page/admin.html")
 })
@@ -100,7 +99,7 @@ app.post('/editCard', upload.single('logo-edit'), function (req, res, next) {
     fs.writeFileSync('../json/cards.json', parseData)
 
     date = Date.now()
-    console.log(date)
+    // console.log(date)
 
     res.redirect("../admin-page/admin.html")
 })
@@ -110,8 +109,6 @@ app.post('/deleteCard', upload.single('logo'), function(req, res, next) {
     parseData = JSON.parse(raw);
     let dataIndex = null;
 
-    console.log(req.body)
-    
     for (let i = 0; i < parseData.cards.length; i++) {
         if (parseData.cards[i].id == req.body.deleteSelect) {
             dataIndex = i; 

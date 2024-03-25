@@ -1,3 +1,23 @@
+function deleteStorage() {
+    let cardList = document.getElementById('allCards').querySelectorAll('.card');
+    let arrStorage = [];
+    arrCards = [];
+
+    for (let i = 0; i < localStorage.length; i++) {
+        arrStorage.push(localStorage.key(i));
+    }
+
+    for (let i = 0; i < cardList.length; i++) {
+        arrCards.push(cardList[i].id);
+    }
+
+    const deleteStorage = arrStorage.filter(el => !arrCards.includes(el));
+
+    for (let i = 0; i < deleteStorage.length; i++) {
+        localStorage.removeItem(deleteStorage[i])
+    }
+}
+
 function ReloadDOM() {
     let cardList = document.getElementById('allCards').querySelectorAll('.card'),
         favList = document.getElementById('favoriteAll').querySelectorAll('.card')
@@ -20,6 +40,8 @@ function ReloadDOM() {
                 break
         }
     }
+
+    deleteStorage()
 }
 
 function FavoritesClick(e) {
