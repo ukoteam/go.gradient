@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "a",
   "main": "index.js",
-  "homepage": "https://ukoteam.github.io/go.gradient/",
   "scripts": {
     "start": "node index",
     "devstart": "nodemon index.js"
