@@ -7,18 +7,18 @@ const path = require("path");
 const app = express();
 const port = process.env.PORT || 3000;
 
-let raw = fs.readFileSync('../json/cards.json'),
+let raw = fs.readFileSync('json/cards.json'),
     parseData = JSON.parse(raw);
 
 
-app.use(express.static(path.resolve(__dirname, '..')));
+app.use(express.static(path.resolve(__dirname, './')));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, '../src/');
+        cb(null, 'src/');
     },
     filename: function (req, file, cb) {
         cb(null, `logo-${date}.png`);
@@ -30,7 +30,7 @@ var upload = multer({ storage })
 let date = Date.now()
 
 app.post('/addNewCard', upload.single('logo'), function (req, res, next) {
-    raw = fs.readFileSync('../json/cards.json');
+    raw = fs.readFileSync('json/cards.json');
     parseData = JSON.parse(raw);
 
     const newData = {
@@ -47,7 +47,7 @@ app.post('/addNewCard', upload.single('logo'), function (req, res, next) {
     newObject = JSON.parse(newObject);
     parseData.cards.push(newObject);
     parseData = JSON.stringify(parseData);
-    fs.writeFileSync('../json/cards.json', parseData)
+    fs.writeFileSync('json/cards.json', parseData)
 
     date = Date.now()
     // console.log(date)
@@ -56,7 +56,7 @@ app.post('/addNewCard', upload.single('logo'), function (req, res, next) {
 })
 
 app.post('/editCard', upload.single('logo-edit'), function (req, res, next) {
-    raw = fs.readFileSync('../json/cards.json');
+    raw = fs.readFileSync('json/cards.json');
     parseData = JSON.parse(raw);
     let dataIndex = null;
     
@@ -69,7 +69,7 @@ app.post('/editCard', upload.single('logo-edit'), function (req, res, next) {
 
     console.log(req)
     if (req.file) {
-        fs.unlink(parseData.cards[dataIndex].logo, (err) => {
+        fs.unlink(parseData.cards[dataIndex].logo.slice(3), (err) => {
             if (err) throw err;
             console.log("Файл удалён")
         })
@@ -96,7 +96,7 @@ app.post('/editCard', upload.single('logo-edit'), function (req, res, next) {
     }
 
     parseData = JSON.stringify(parseData);
-    fs.writeFileSync('../json/cards.json', parseData)
+    fs.writeFileSync('json/cards.json', parseData)
 
     date = Date.now()
     // console.log(date)
@@ -105,7 +105,7 @@ app.post('/editCard', upload.single('logo-edit'), function (req, res, next) {
 })
 
 app.post('/deleteCard', upload.single('logo'), function(req, res, next) {
-    raw = fs.readFileSync('../json/cards.json');
+    raw = fs.readFileSync('json/cards.json');
     parseData = JSON.parse(raw);
     let dataIndex = null;
 
@@ -116,14 +116,14 @@ app.post('/deleteCard', upload.single('logo'), function(req, res, next) {
         }
     }
 
-    fs.unlink(parseData.cards[dataIndex].logo, (err) => {
+    fs.unlink(parseData.cards[dataIndex].logo.slice(3), (err) => {
         if (err) throw err;
         console.log("Файл удалён!")
     })
 
     parseData.cards.splice(dataIndex, 1)
     parseData = JSON.stringify(parseData);
-    fs.writeFileSync('../json/cards.json', parseData)
+    fs.writeFileSync('json/cards.json', parseData)
 
     res.redirect("../admin-page/admin.html")
 })
